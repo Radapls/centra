@@ -7,7 +7,6 @@ import ScrollDown from "@components/navigation/ScrollDown.vue";
 import SbBridge from "@components/helpers/SbBridge.vue";
 import Init from "@components/helpers/Init.vue";
 import Toasts from "@components/helpers/Toasts.vue";
-import ContactForm from "@components/bloks/premium/ContactForm.astro";
 import Dialog from "@components/helpers/Dialog.vue";
 import { Icon } from "astro-icon/components";
 import { SEO } from "astro-seo";
@@ -98,7 +97,7 @@ const cssColors: { [key: string]: Color } = {
 
 let cssColorVars: ColorVars = {};
 
-Object.keys(cssColors).forEach((key) => { 
+Object.keys(cssColors).forEach((key) => {
   const newKey = key.replaceAll("_", "-");
   const newValue = hex2rgb(cssColors[key].color);
   cssColorVars[newKey] = newValue;
@@ -109,7 +108,7 @@ const labels = {
   menu: t("menu"),
   back_to_home: t("back_to_home"),
 };
- 
+
 let socialImage = meta.image + "/m/1200x630/smart/filters:format(png)";
 ---
 
@@ -237,7 +236,7 @@ let socialImage = meta.image + "/m/1200x630/smart/filters:format(png)";
 
           <ul
           class={`${surface_menu} rounded-input pointer-events-auto hidden flex-wrap items-center gap-2 p-1 shadow-md sm:flex`}
-            
+
           >
             {
               main_menu &&
@@ -312,7 +311,6 @@ let socialImage = meta.image + "/m/1200x630/smart/filters:format(png)";
           surface={contact_form[0]?.surface || "surface-light"}
           client:idle
         >
-          <ContactForm blok={contact_form[0]} />
         </Dialog>
       )
     }
